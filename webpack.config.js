@@ -7,10 +7,17 @@ module.exports = {
     index: './src/js/index.js',
   },
   output: {
+    publicPath: '/',
     path: path.join(__dirname, 'dist/js'),
     filename: 'main.js',
   },
-  devtool: 'eval-source-map',
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    host: '0.0.0.0',
+    port: 9000,
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {
